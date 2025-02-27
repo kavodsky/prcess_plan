@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,13 +21,16 @@ import { ProjectDashboardComponent } from './features/project-dashboard/project-
     FilterDropdownComponent,
     HoverActionsDirective,
     ProjectCardComponent,
-    ProjectDashboardComponent
+    // ProjectDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    // Add the provider from app.config.ts
+    provideZoneChangeDetection({ eventCoalescing: true })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

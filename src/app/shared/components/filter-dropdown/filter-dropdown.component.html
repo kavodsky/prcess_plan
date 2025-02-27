@@ -1,0 +1,17 @@
+<!-- src/app/shared/components/filter-dropdown/filter-dropdown.component.html -->
+<div class="dropdown-container">
+  <label>{{ config.label }}</label>
+  <div class="dropdown" (click)="toggleDropdown()">
+    <span class="selected-value">{{ selectedValue || 'Select...' }}</span>
+    <span class="dropdown-arrow">▼</span>
+  </div>
+  <div class="dropdown-options" [class.open]="isOpen">
+    <div
+      *ngFor="let option of config.options"
+      class="dropdown-option"
+      [class.selected]="option.value === selectedValue"
+      (click)="selectOption(option)">
+      {{ option.label }}
+    </div>
+  </div>
+</div>
