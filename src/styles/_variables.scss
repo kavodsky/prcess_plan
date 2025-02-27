@@ -1,0 +1,41 @@
+/* src/styles/_variables.scss */
+// Color palette
+$primary-color: #2c3e50;
+$secondary-color: #34495e;
+$accent-color: #3498db;
+$success-color: #2ecc71;
+$warning-color: #f39c12;
+$danger-color: #e74c3c;
+
+// UI Colors
+$background-color: #f8f9fa;
+$card-background: #ffffff;
+$border-color: #dee2e6;
+$hover-color: #f1f3f5;
+
+// Text Colors
+$text-color-dark: #2c3e50;
+$text-color: #4a5568;
+$text-color-light: #718096;
+
+// Component-specific Colors
+$primary-button: #4caf50;
+$dark-green: #1a4731;
+$light-green: #e6f7ed;
+$dark-gray: #4a5568;
+
+// Layout
+$header-height: 60px;
+$footer-height: 60px;
+$sidebar-width: 240px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-indices
+$z-dropdown: 100;
+$z-modal: 1000;
+$z-tooltip: 500;

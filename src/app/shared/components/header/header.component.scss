@@ -1,0 +1,38 @@
+/* src/app/shared/components/header/header.component.scss */
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background-color: $primary-color;
+  color: white;
+  z-index: 1000;
+  
+  .header-content {
+    @include flex-between;
+    height: 100%;
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header-left {
+    @include flex-center;
+  }
+  
+  .header-right {
+    @include flex-center;
+    
+    .user-info {
+      @include flex-center;
+      
+      .user-name {
+        font-weight: 500;
+      }
+    }
+  }
+}

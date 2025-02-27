@@ -1,0 +1,28 @@
+<!-- src/app/features/project-dashboard/components/project-card/project-card.component.html -->
+<div class="project-card" appHoverActions>
+    <div class="project-image"></div>
+    <div class="project-content">
+      <h3 class="project-title">{{ project.name }}</h3>
+      <div class="project-details">
+        <div class="project-labels">
+          <span *ngIf="project.cmdr">CMDR</span>
+          <span *ngIf="project.cmdr && (project.nce || project.nbe)"> • </span>
+          <span *ngIf="project.nce">NCE</span>
+          <span *ngIf="project.nbe">NBE</span>
+          <span *ngIf="project.category">{{ project.category }}</span>
+        </div>
+        <div class="project-tags">
+          <span *ngFor="let tag of project.tags" class="project-tag">{{ tag }}</span>
+        </div>
+        <div class="project-status">
+          <span [ngClass]="'status-badge-' + project.status.toLowerCase()">{{ project.status }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-actions">
+      <button class="action-button primary" (click)="onEdit()">Edit the project</button>
+      <button class="action-button primary" (click)="onMoveToPreLO()">Move to preLO</button>
+      <button class="action-button danger" (click)="onTerminate()">Terminated</button>
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+/* src/app/shared/components/footer/footer.component.scss */
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $footer-height;
+  background-color: $primary-color;
+  color: white;
+  z-index: 900;
+  
+  .footer-content {
+    @include flex-center;
+    height: 100%;
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

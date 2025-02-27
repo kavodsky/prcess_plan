@@ -1,0 +1,46 @@
+<!-- src/app/features/project-dashboard/project-dashboard.component.html -->
+<div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1 class="dashboard-title">WAYPOINT</h1>
+      <p class="dashboard-subtitle">
+        A data-driven, streamlined research path design and decision support tool for drug discovery.
+      </p>
+    </header>
+    
+    <div class="filters-section">
+      <div class="filter-group">
+        <app-filter-dropdown 
+          [config]="labelFilter" 
+          [selectedValue]="selectedLabel" 
+          (valueChanged)="onLabelFilterChange($event)">
+        </app-filter-dropdown>
+      </div>
+      
+      <div class="filter-group">
+        <app-filter-dropdown 
+          [config]="phaseFilter" 
+          [selectedValue]="selectedPhase" 
+          (valueChanged)="onPhaseFilterChange($event)">
+        </app-filter-dropdown>
+      </div>
+      
+      <div class="filter-group">
+        <app-filter-dropdown 
+          [config]="labelFilter" 
+          [selectedValue]="selectedLabel" 
+          (valueChanged)="onLabelFilterChange($event)">
+        </app-filter-dropdown>
+      </div>
+    </div>
+    
+    <div class="projects-grid">
+      <div *ngFor="let project of filteredProjects" class="project-card-wrapper">
+        <app-project-card 
+          [project]="project"
+          (editProject)="onEditProject($event)"
+          (moveToPreLO)="onMoveToPreLO($event)"
+          (terminateProject)="onTerminateProject($event)">
+        </app-project-card>
+      </div>
+    </div>
+  </div>
